@@ -34,3 +34,10 @@ function adicionarToDate(n: number): string{
         return `${n}`;
     }
 }
+
+export const formatCurrentMonth = (cMonth: string): string => {
+    let [year, month] = cMonth.split('-');
+    let months = ['Janeiro', 'Favereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+    return `${months[parseInt(month) - 1]} de ${year}`;
+}

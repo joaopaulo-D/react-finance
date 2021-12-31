@@ -10,11 +10,11 @@ import {
     Value
 } from "./style";
 
-type IProps = {
+type Props = {
     item: Item
 }
 
-const TableItem: React.FC<IProps> = (props) => {
+const TableItem: React.FC<Props> = (props) => {
     return(
         <TableLine>
             <TableColnm>{formatDate(props.item.date)}</TableColnm>

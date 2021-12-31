@@ -8,6 +8,7 @@ import {
 import { GlobalStyle } from "./styles/GlobalStyle";
 
 import TableArea from "./components/TableArea";
+import InfoArea from "./components/infoArea";
 
 import { Item } from "./types/Item";
 import { Category } from "./types/Category";
@@ -23,7 +24,11 @@ const App: React.FC = () => {
 
     useEffect(() => {
         setFilterList(filterListByMonth(list, currentMonth))
-    }, [list, currentMonth])
+    }, [list, currentMonth]);
+
+    const handleMonthChange = (newMonth: string) => {
+        setCurrentMonth(newMonth);
+    }
 
     return(
         <Container>
@@ -31,7 +36,11 @@ const App: React.FC = () => {
                 <HeaderText>Sistema Financeiro</HeaderText>
             </Header>
             <Body>
-                <TableArea list={list}/>
+                <InfoArea 
+                    cMonth={currentMonth}
+                    onMonthChange={handleMonthChange}
+                />
+                <TableArea list={filterList}/>
             </Body>
             <GlobalStyle/>
         </Container>

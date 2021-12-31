@@ -8,11 +8,11 @@ import {
     TableHeadColumn 
 } from "./style";
 
-type IProps = {
+type Props = {
     list: Item[]
 }
 
-const TableArea: React.FC<IProps> = (props) => {
+const TableArea: React.FC<Props> = (props) => {
     return(
         <Table>
             <thead>
